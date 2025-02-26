@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: todo-list
+
+  data:
+    mongodb:
+      uri: mongodb://${MY_USER_DB}:${MY_PASS_DB}@localhost:27017/${MY_DATABASE}?authSource=admin
+
+application:
+  security:
+    jwt:
+      secret-key: ${SECRET_KEY}
+      expiration: 86400000
+      refresh-token:
+        expiration: 604800000
+server:
+  port: 8080
+springdoc:
+  api-docs:
+    path: /api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
